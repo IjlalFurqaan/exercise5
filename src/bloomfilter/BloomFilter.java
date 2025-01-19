@@ -25,6 +25,7 @@ public class BloomFilter<E> {
         final int vecSize = numBytes * Byte.SIZE;
         this.bits = new byte[numBytes * Byte.SIZE];
         // False positive rate of 1%:
+        
         this.hf = new Function[(int) -(Math.log(0.01) / Math.log(2))];
         for (int i = 0; i < this.hf.length; i++) {
             final int j = i;
